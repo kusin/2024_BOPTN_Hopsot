@@ -9,4 +9,7 @@
 - Variabel cuaca : radiasi matahari, curah hujan, suhu udara, kelembaban udara, kecepatan angin
 - Variabel ENSO : SST Nino 3.4 dan Index SOI
 
-### Perangkat
+### Perangkat Lunak
+
+
+### Perangkat Keras
