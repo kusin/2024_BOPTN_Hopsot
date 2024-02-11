@@ -1,0 +1,48 @@
+Ide penelitian
+
+Masalah penelitian
+1. Data KHKL (https://sipongi.menlhk.go.id/), kebakaran hutan meningkat di th 2023
+
+Penyebab utama
+1. Terjadi El-Nino di th 2023, sehingga musim kemarau panjang
+
+Faktor kemunculan titik panas
+1. iklim (radiasi matahari, curah hujan, suhu udara, kelembaban udara, kecepatan angin)
+
+Algoritma
+	konsep dasar
+		LSTM-RNN
+			Bagus akurasi, tp kurang lama proses traning
+		GRU-RNN
+			Biasa cenderung turun akurasi tp batas toleren (-+5%), lebih cepet
+	Usulan kontribusi
+		LSTM-RNN + SB = sama, kurang bagus
+		GRU-RNN + SB = sama, kurang bagus
+		LSTM + SB + XGBoost = bagus,
+		GRU + SB + XGBoost = bagus,
+
+Pertanyaan yg ingin dijawab
+0. Parameter terbaik?
+1. Berapa perbedaan akurasi LSTM jika dibandingkan dengan GRU?
+2. Berapa perbedaan waktu komputasi antara LSTM dan GRU?
+3. Apakah terjadi perbedaan akurasi jika LSTM dan GRU di extend Stacked Bidirectional
+4. Apakah terjadi perbedaan akurasi jika LSTM dan GRU di extend XGBoost
+
+Tujuan
+1. Mendapatkan model prediksi terbaik
+
+Manfaat 
+1. tindakan preventif untuk membantuk KLHK
+----------------------------------------------------------------------------
+
+Isu penelitian
+1. Waktu training lama, 
+2. Data iklim dari CRU Climate untuk th 2023 belum keluar (V.4.08)
+
+Alternatif data iklim
+	- CRU bagus, mudah, belum keluar v.4.08, praproses minim
+	- ERA5, belum dicek
+	- ECMWF, belum dicek
+	- Landast8, belum dicek
+
+
