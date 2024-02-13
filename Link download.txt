@@ -1,9 +1,0 @@
-----------------------------------
-# Link Download                  #
-----------------------------------
-
-1. Download SHP Sumsel
-https://geosai.my.id/download-shp-kabupaten-kota-indonesia/
-https://katalog.data.go.id/dataset/peta-batas-administrasi-desa-provinsi-sumatera-selatan
-http://geoportal.sumselprov.go.id/pencarian/
-
