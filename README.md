@@ -18,3 +18,11 @@
 - Resolution : 1366 x 768 px
 
 ### Spesifikasi Perangkat Lunak
+- OS : Windows 10 Profesional 22H2
+- Compiler : Anaconda 2023.09 (Python 3.11.5)
+- Text Editor : VSCode last version
+- Web Browser : Google Chrome last version
+
+### Spesifikasi Library
+- Tensorflow v.2.11.0
+- Keras v.2.11.0
