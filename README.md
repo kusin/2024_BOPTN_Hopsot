@@ -2,13 +2,13 @@
 - Optimasi model prediksi titik panas dengan memperhatikan faktor iklim dan ENSO menggunakan algoritma ensemble learning
 
 ### Masalah Penelitian
-- Fenomena ENSO 2023 meningkatkan karhutla
-- Sumatera Selatan, masuk peringkat 5 besar provinsi rawan karhutla
+- Kebakaran hutan dan lahan di Indonesia meningkat pada tahun 2023
+- Provinsi Sumatera Selatan, masuk peringkat 5 besar provinsi rawan kebakaran hutan dan lahan 
 
 ### Kontribusi Penelitian
-- Implementasi algoritma GRU-RNN, SB-GRU-RNN, GRU-XGBoost
+- Implementasi algoritma SB-LSTM-RNN, SB-GRU-RNN, SB-LSTM-XGBoost dan SB-GRU-XGBoost.
 - Variabel cuaca : radiasi matahari, curah hujan, suhu udara, kelembaban udara, kecepatan angin
-- Variabel ENSO : SST Nino 3.4 dan Index SOI
+- Variabel ENSO : SST Nino 3.4, Index ONI, Index SOI
 
 ### Spesifikasi Perangkat Keras
 - Laptop HP Probook 440 G6
@@ -23,6 +23,7 @@
 - Text Editor : VSCode last version
 - Web Browser : Google Chrome last version
 
-### Spesifikasi Library
-- Tensorflow v.2.11.0
-- Keras v.2.11.0
+### Spesifikasi Library 
+- Tensorflow v.2.14.0
+- Keras v.2.14.0
+- Scikeras v.0.12.0
