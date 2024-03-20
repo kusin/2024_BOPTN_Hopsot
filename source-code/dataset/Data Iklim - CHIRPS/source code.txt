@@ -1,0 +1,57 @@
+// 1. Define province boundary layer
+var Provinces = ee.FeatureCollection('FAO/GAUL/2015/level1');
+var roi = Provinces.filter(ee.Filter.eq('ADM1_NAME', 'Sumatera Selatan'));
+Map.addLayer(roi, {}, "roi");
+Map.centerObject(roi);
+
+// 2. List of years
+var years = ee.List.sequence(2001, 2023);
+var months = ee.List.sequence(1, 12);
+
+// 3. Load Rainfall 
+var rainfall = ee.ImageCollection("UCSB-CHG/CHIRPS/PENTAD").select("precipitation"); 
+print(rainfall.first());
+
+// 4. Set visualization parameter
+var rainfall_Vis = {
+  min: 1.0,
+  max: 17.0,
+  palette: ['0300ff', '418504', 'efff07', 'efff07', 'ff0303'],
+};
+// 5. Center and add rainfall layer
+Map.setCenter(104, -3.5, 8); // Zoom level ranges from 1 to 16
+Map.addLayer(rainfall.mean(), rainfall_Vis, 'Rainfall');
+
+// 6. Map over the years and create a monthly totals collection
+var monthlyImages = years.map(function(year) {
+  return months.map(function(month) {
+    var filtered = rainfall
+      .filter(ee.Filter.calendarRange(year, year, 'year'))
+      .filter(ee.Filter.calendarRange(month, month, 'month'))
+    var monthly = filtered.sum()
+    return monthly.set({'month': month, 'year': year})
+  })
+}).flatten()
+
+// 7. This will give us one image per month for entire period
+var monthlyCol = ee.ImageCollection.fromImages(monthlyImages)
+print(monthlyCol.first());
+
+// 8. Zonal statistics to summarize Rainfall data for specific study area (e.g., Sumatera Selatan)
+var rainfallSumateraSelatan = monthlyCol.map(function(img) {
+  var features = roi.map(function(f) {return f.set('month', img.get('month'), 'year', img.get('year'))})
+  var proj = ee.Image(monthlyCol.first()).projection();
+  return img.reduceRegions(features, ee.Reducer.mean(), 1000, proj);
+}).flatten();
+print("Rainfall Summary Mean", rainfallSumateraSelatan.limit(10));
+
+// 9. Export the resulting mean as a table to Google Drive
+var selectors = "month, year, ADM1_NAME, mean";
+Export.table.toDrive({
+    collection: rainfallSumateraSelatan,
+    description: 'Rainfall_Timeseries_SumateraSelatan', 
+    folder: 'earth_engine_data', 
+    fileNamePrefix: 'Rainfall_Timeseries_SumateraSelatan', 
+    fileFormat: 'CSV',
+    selectors: selectors
+});
