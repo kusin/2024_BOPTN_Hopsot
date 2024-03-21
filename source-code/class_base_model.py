@@ -4,7 +4,7 @@ from keras.layers import LSTM
 from keras.layers import GRU
 
 # ----------------------------------------------------------------------------------------------------------
-def lstm_algorithm(x_train, activation, Dropout):
+def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
 
     # The Neural Network Architecture
     model = tf.keras.Sequential([
@@ -25,11 +25,22 @@ def lstm_algorithm(x_train, activation, Dropout):
         ),
         
         # Dropout layer
-        tf.keras.layers.Dropout(Dropout),
+        tf.keras.layers.Dropout(dropout_rate),
 
         # The output layer
         tf.keras.layers.Dense(1)
     ])
+
+    # Compile the model predictions
+    model.compile(
+        optimizer=optimizer,
+        loss='mae',
+        metrics=[
+            tf.keras.metrics.MeanAbsoluteError(),
+            tf.keras.metrics.MeanSquaredError(),
+            tf.keras.metrics.MeanAbsolutePercentageError(),
+        ]
+    )
 
     # return values
     return model
@@ -37,7 +48,7 @@ def lstm_algorithm(x_train, activation, Dropout):
 
 
 # ----------------------------------------------------------------------------------------------------------
-def gru_algorithm(x_train, activation, Dropout):
+def gru_algorithm(x_train, activation, dropout_rate, optimizer):
 
     # The Neural Network Architecture
     model = tf.keras.Sequential([
@@ -58,11 +69,22 @@ def gru_algorithm(x_train, activation, Dropout):
         ),
         
         # Dropout layer
-        tf.keras.layers.Dropout(Dropout),
+        tf.keras.layers.Dropout(dropout_rate),
 
         # The output layer
         tf.keras.layers.Dense(1)
     ])
+
+    # Compile the model predictions
+    model.compile(
+        optimizer=optimizer,
+        loss='mae',
+        metrics=[
+            tf.keras.metrics.MeanAbsoluteError(),
+            tf.keras.metrics.MeanSquaredError(),
+            tf.keras.metrics.MeanAbsolutePercentageError(),
+        ]
+    )
 
     # return values
     return model
