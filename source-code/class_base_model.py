@@ -42,7 +42,7 @@ def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
     # Compile the model predictions
     model.compile(
         optimizer=optimizer,
-        loss='mae',
+        loss="mae",
         metrics=[
             tf.keras.metrics.MeanAbsoluteError(),
             tf.keras.metrics.MeanSquaredError(),
