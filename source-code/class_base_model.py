@@ -43,11 +43,11 @@ def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
     model.compile(
         optimizer=optimizer,
         loss='mae',
-        # metrics=[
-        #     tf.keras.metrics.MeanAbsoluteError(),
-        #     tf.keras.metrics.MeanSquaredError(),
-        #     tf.keras.metrics.MeanAbsolutePercentageError(),
-        # ]
+        metrics=[
+            tf.keras.metrics.MeanAbsoluteError(),
+            tf.keras.metrics.MeanSquaredError(),
+            tf.keras.metrics.MeanAbsolutePercentageError(),
+        ]
     )
 
     # return values
@@ -87,11 +87,11 @@ def gru_algorithm(x_train, activation, dropout_rate, optimizer):
     model.compile(
         optimizer=optimizer,
         loss='mae',
-        # metrics=[
-        #     tf.keras.metrics.MeanAbsoluteError(),
-        #     tf.keras.metrics.MeanSquaredError(),
-        #     tf.keras.metrics.MeanAbsolutePercentageError(),
-        # ]
+        metrics=[
+            tf.keras.metrics.MeanAbsoluteError(),
+            tf.keras.metrics.MeanSquaredError(),
+            tf.keras.metrics.MeanAbsolutePercentageError(),
+        ]
     )
 
     # return values
