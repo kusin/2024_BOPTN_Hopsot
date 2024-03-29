@@ -19,17 +19,17 @@ def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
         
         # First layer with Dropout regularisation
         tf.keras.layers.Bidirectional(
-            LSTM(units=10, activation=activation, return_sequences=True, input_shape=(x_train.shape[1], 1))
+            LSTM(units=50, activation=activation, return_sequences=True, input_shape=(x_train.shape[1], 1))
         ),
         
         # Secound layer with Dropout regularisation
         tf.keras.layers.Bidirectional(
-            LSTM(units=10, activation=activation, return_sequences=True, input_shape=(x_train.shape[1], 1))
+            LSTM(units=50, activation=activation, return_sequences=True, input_shape=(x_train.shape[1], 1))
         ),
 
         # Third layer with Dropout regularisation
         tf.keras.layers.Bidirectional(
-            LSTM(units=10, activation=activation, return_sequences=False)
+            LSTM(units=50, activation=activation, return_sequences=False)
         ),
         
         # Dropout layer
@@ -43,11 +43,11 @@ def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
     model.compile(
         optimizer=optimizer,
         loss='mae',
-        metrics=[
-            tf.keras.metrics.MeanAbsoluteError(),
-            tf.keras.metrics.MeanSquaredError(),
-            tf.keras.metrics.MeanAbsolutePercentageError(),
-        ]
+        # metrics=[
+        #     tf.keras.metrics.MeanAbsoluteError(),
+        #     tf.keras.metrics.MeanSquaredError(),
+        #     tf.keras.metrics.MeanAbsolutePercentageError(),
+        # ]
     )
 
     # return values
@@ -63,17 +63,17 @@ def gru_algorithm(x_train, activation, dropout_rate, optimizer):
         
         # First layer with Dropout regularisation
         tf.keras.layers.Bidirectional(
-            GRU(units=10, activation=activation, return_sequences=True, input_shape=(x_train.shape[1], 1))
+            GRU(units=50, activation=activation, return_sequences=True, input_shape=(x_train.shape[1], 1))
         ),
         
         # Secound layer with Dropout regularisation
         tf.keras.layers.Bidirectional(
-            GRU(units=10, activation=activation, return_sequences=True, input_shape=(x_train.shape[1], 1))
+            GRU(units=50, activation=activation, return_sequences=True, input_shape=(x_train.shape[1], 1))
         ),
 
         # Third layer with Dropout regularisation
         tf.keras.layers.Bidirectional(
-            GRU(units=10, activation=activation, return_sequences=False)
+            GRU(units=50, activation=activation, return_sequences=False)
         ),
         
         # Dropout layer
@@ -87,11 +87,11 @@ def gru_algorithm(x_train, activation, dropout_rate, optimizer):
     model.compile(
         optimizer=optimizer,
         loss='mae',
-        metrics=[
-            tf.keras.metrics.MeanAbsoluteError(),
-            tf.keras.metrics.MeanSquaredError(),
-            tf.keras.metrics.MeanAbsolutePercentageError(),
-        ]
+        # metrics=[
+        #     tf.keras.metrics.MeanAbsoluteError(),
+        #     tf.keras.metrics.MeanSquaredError(),
+        #     tf.keras.metrics.MeanAbsolutePercentageError(),
+        # ]
     )
 
     # return values
