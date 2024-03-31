@@ -1,0 +1,9 @@
+batch_size,epochs,model__activation,model__dropout_rate,model__optimizer,score
+32,1,selu,0.25,rmsprop,-9.257485566628137
+32,1,selu,0.2,rmsprop,-10.255373598424322
+32,1,selu,0.25,sgd,-12.34775369563502
+32,1,selu,0.2,sgd,-14.049581044030672
+32,1,relu,0.2,sgd,-16.505349290490305
+32,1,relu,0.25,rmsprop,-17.109521907550644
+32,1,relu,0.25,sgd,-17.18895002485087
+32,1,relu,0.2,rmsprop,-17.968592483721867
