@@ -14,6 +14,9 @@ from keras.layers import LeakyReLU
 # ----------------------------------------------------------------------------------------------------------
 def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
 
+    # reset of session model
+    tf.keras.backend.clear_session()
+
     # The Neural Network Architecture
     model = tf.keras.Sequential([
         
@@ -46,7 +49,7 @@ def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
         metrics=[
             tf.keras.metrics.MeanAbsoluteError(),
             tf.keras.metrics.MeanSquaredError(),
-            tf.keras.metrics.MeanAbsolutePercentageError(),
+            #tf.keras.metrics.MeanAbsolutePercentageError(),
         ]
     )
 
@@ -58,6 +61,9 @@ def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
 # ----------------------------------------------------------------------------------------------------------
 def gru_algorithm(x_train, activation, dropout_rate, optimizer):
 
+    # reset of session model
+    tf.keras.backend.clear_session()
+    
     # The Neural Network Architecture
     model = tf.keras.Sequential([
         
