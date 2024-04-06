@@ -49,7 +49,7 @@ def lstm_algorithm(x_train, activation, dropout_rate, optimizer):
         metrics=[
             tf.keras.metrics.MeanAbsoluteError(),
             tf.keras.metrics.MeanSquaredError(),
-            #tf.keras.metrics.MeanAbsolutePercentageError(),
+            tf.keras.metrics.MeanAbsolutePercentageError(),
         ]
     )
 
