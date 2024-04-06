@@ -10,4 +10,5 @@ import pandas as pd
 
 
 def loadData(df):
-    df = pd.read_csv()
+    dataset = pd.read_csv("D:/2024_BOPTN_Hopsot/source-code/temp/"+df)
+    return dataset
