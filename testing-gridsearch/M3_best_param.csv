@@ -1,2 +1,2 @@
 batch_size,epochs,model__activation,model__dropout_rate,model__optimizer
-2,15,selu,0.05,rmsprop
+32,5,selu,0.1,adam
