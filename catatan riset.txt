@@ -1,0 +1,29 @@
+Jika M3 dan M6 menggunakan semua parameter enso
+# jika hotspot dipengaruhi oleh enso
+data = dataset[["hotspot", "sst_std", "sst_anom", "oni_std", "oni_anom", "soi_std", "soi_anom"]]
+data = data.values
+
+# call function
+from class_base_model import lstm_algorithm
+from class_base_model import gru_algorithm
+
+# set parameter
+activation = "relu"
+dropout_rate = 0.25
+optimizer = "rmsprop"
+
+# check algorithm
+if algorithm == "algorithm":
+    # call model LSTM-RNN
+    model = lstm_algorithm(trainX, activation, dropout_rate, optimizer)
+else:
+    # call model GRU-RNN
+    model = gru_algorithm(trainX, activation, dropout_rate, optimizer)
+
+# fit network
+history = model.fit(
+    trainX, trainY, batch_size=32, epochs=1500,
+    validation_data=(testX, testY), verbose=1, shuffle=False, use_multiprocessing=True
+)
+
+# ---------------------------------------------------------------------------------------------------

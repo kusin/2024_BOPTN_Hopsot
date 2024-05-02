@@ -1,2 +1,0 @@
-Code untuk unduh data cuaca via google earth
-https://code.earthengine.google.co.in/832dd48ad7d3f5f22f5303ad10b5a6d2
