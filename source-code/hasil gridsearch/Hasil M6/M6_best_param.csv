@@ -1,2 +1,0 @@
-batch_size,epochs,model__activation,model__dropout_rate,model__optimizer
-2,1500,selu,0.25,sgd
