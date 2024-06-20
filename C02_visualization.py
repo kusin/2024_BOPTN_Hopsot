@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def lineplot1(x, y, label):
   # membuat time series plot
-  fig, ax = plt.subplots(figsize = (10,5))
+  fig, ax = plt.subplots(figsize = (8,4))
   ax.plot(x, y, color="tab:blue", label=label, linewidth=2.5)
 
   # membuat label-label
@@ -20,7 +20,7 @@ def lineplot1(x, y, label):
 
 def lineplot2(x1, y1, x2, y2, label1, label2):
   # membuat time series plot
-  fig, ax = plt.subplots(figsize = (10,5))
+  fig, ax = plt.subplots(figsize = (8,4))
   ax.plot(x1, y1, color="tab:blue", label=label1, linewidth=2.5)
   ax.plot(x2, y2, color="tab:red", label=label2, linewidth=2.5)
 
@@ -67,3 +67,20 @@ def lineplot4(date, ytrue, ypred, title):
 
   # menampilkan plot
   return plt.show()
+
+def lineplot5(date, ytrue, ypred1, label1, ypred2, label2, title):
+  # membuat time series plot
+  fig, ax = plt.subplots(figsize = (10,5))
+  ax.plot(date, ytrue, color="tab:blue", label="data actual", linewidth=2)
+  ax.plot(date, ypred1, color="tab:red", label=label1, linewidth=2)
+  ax.plot(date, ypred2, color="tab:green", label=label2, linewidth=2)
+
+  # membuat label-label
+  ax.set_title(title, fontsize=12)
+  ax.set_xlabel("", fontsize=12)
+  ax.set_ylabel("", fontsize=12)
+  ax.legend(loc="best")
+  ax.grid(True)
+
+  # menampilkan plot
+  plt.show()
