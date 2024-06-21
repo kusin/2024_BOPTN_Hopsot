@@ -1,4 +1,4 @@
-## Laporan BOPTN UIN Jakarta 2024
+## Laporan BOPTN 2024
 - Optimasi model prediksi titik panas dengan memperhatikan faktor iklim dan ENSO menggunakan algoritma ensemble learning
 
 ### Masalah Penelitian
