@@ -16,7 +16,12 @@ def normalized(dataset, features):
   scaler = MinMaxScaler(feature_range=(-1, 1))
   scaled = scaler.fit_transform(np.array(data))
 
-  return scaled
+  return scaler, scaled
+# ----------------------------------------------------------------------------------------
+
+def inverse(scaler, scaled):
+  hasil = scaler.inverse_transform(scaled.reshape(-1,1))
+  return hasil
 # ----------------------------------------------------------------------------------------
 
 def splitting(scaled):

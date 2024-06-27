@@ -24,6 +24,7 @@ def get_models(algorithm, timestep, activation, dropout, optimizer):
   if algorithm == "SBi-LSTM":
     model = Sequential()
     model.add(Bidirectional(LSTM(units=50, activation=activation, return_sequences=True, input_shape=(timestep, 1))))
+    model.add(Bidirectional(LSTM(units=50, activation=activation, return_sequences=True)))
     model.add(Bidirectional(LSTM(units=50, activation=activation, return_sequences=False)))
     model.add(Dropout(dropout))
     model.add(Dense(1))
@@ -32,6 +33,7 @@ def get_models(algorithm, timestep, activation, dropout, optimizer):
   if algorithm == "SBi-GRU":
     model = Sequential()
     model.add(Bidirectional(GRU(units=50, activation=activation, return_sequences=True, input_shape=(timestep, 1))))
+    model.add(Bidirectional(GRU(units=50, activation=activation, return_sequences=True)))
     model.add(Bidirectional(GRU(units=50, activation=activation, return_sequences=False)))
     model.add(Dropout(dropout))
     model.add(Dense(1))

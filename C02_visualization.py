@@ -70,10 +70,10 @@ def lineplot4(date, ytrue, ypred, title):
 
 def lineplot5(date, ytrue, ypred1, label1, ypred2, label2, title):
   # membuat time series plot
-  fig, ax = plt.subplots(figsize = (10,5))
-  ax.plot(date, ytrue, color="tab:blue", label="data actual", linewidth=2)
-  ax.plot(date, ypred1, color="tab:red", label=label1, linewidth=2)
-  ax.plot(date, ypred2, color="tab:green", label=label2, linewidth=2)
+  fig, ax = plt.subplots(figsize = (8,4))
+  ax.plot(date, ytrue, color="tab:blue", label="data actual", linewidth=2, linestyle="solid")
+  ax.plot(date, ypred1, color="tab:red", label=label1, linewidth=2, linestyle="dashed")
+  ax.plot(date, ypred2, color="tab:orange", label=label2, linewidth=2, linestyle="dashed")
 
   # membuat label-label
   ax.set_title(title, fontsize=12)
